@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IPA未踏 Kickoff</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+  <style>
+    p {
+      font-family: "A-OTF 新ゴ Pro";
+    }
+    h1 {
+      font-family: "A-OTF 新ゴ Pro";
+    }
+    h2 {
+      font-family: "A-OTF 新ゴ Pro";
+    }
+    h3 {
+      font-family: "A-OTF 新ゴ Pro";
+    }
+
+    .layout {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    .layout .title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      flex: 0 0 auto;
+      text-align: left;
+    }
+    .layout .body {
+      font-size: 0.8em;
+      flex: 1 1 auto;
+      overflow: auto;
+      text-align: left;
+    }
+
+    .reveal .slides section .container{ display: flex; }
+    .reveal .slides section .container .col{ flex: 1; }
+
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- タイトルスライド -->
+    <section>
+      <p style="font-size: 1.4em; margin-bottom: 0.5em;">NeuMoReservoir</p>
+      <p style="font-size: 0.8em; margin-bottom: 0.5em;">神経細胞の形態が生み出す時空間ダイナミクス</p>
+      <p style="font-size: 1.2em;">深水 智史</p>
+    </section>
+
+    <!-- 自己紹介スライド -->
+    <section>
+      <section data-auto-animate>
+      <div class="container">
+        <div class="col">
+          <br>
+          <br>
+          <br>
+          <br>
+          <p>深水 智史</p>
+          <p style="font-size: 20px;">出身:宮崎県</p>
+          <p style="font-size: 20px;">趣味:バスケットボール、ちいかわ</p>
+          <p style="font-size: 20px;">九州工業大学 大学院生命体工学研究科 M2</p>
+        </div>
+        <div class="col">
+          <img src="figure/me.png", alt="Me">
+        </div>
+      </div>
+      </section>
+      <section data-auto-animate>
+        <p> 好きなソフトウェア</p>
+        <div class="container">
+          <div class="col">
+            <img src="https://julialang.org/assets/infra/logo.svg", alt="Julia", height="150px">
+            <img src="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png", alt="Neovim", height="150px">
+          </div>
+            <div class="col">
+            <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png", alt="Reveal.js", height="150px">
+            <img src="https://www.blender.org/wp-content/uploads/2020/07/blender_logo-1280x391.png", alt="Blender", height="150px">
+          </div>
+        </div>
+      </section>
+      <section data-auto-animate, data-background-image="https://www.r-ccs.riken.jp/fugaku/fugaku-annual-reports/assets/img/common/top_mv.jpg">
+        <p style="color: white;">研究</p>
+        <ul>
+          <li style="color: white; font-size: 20px;">脳の発火パターン・同期現象の研究</p>
+          <li style="color: white; font-size: 20px;">脳の情報処理を数理モデルで解明したくて研究を始めた</p>
+          <li style="color: white; font-size: 20px;">たまたまスーパーコンピュータ富岳を使える機会に巡り合わせたので、大規模なシミュレーションもやりたかった</p>
+          <li style="color: white; font-size: 20px;">まだ、大規模にする目的が見つかっていない</p>
+        </ul>
+      </section>
+    </section>
+
+    <!-- スライド2 -->
+    <section>
+      <section>
+        <h1 style="text-align: left;">背景</h1>
+      </section>
+      <section>
+        <div class="layout">
+          <div class="body">
+            <div class="container">
+              <div class="col">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                  <p>ヒト脳は<br>960億個の神経細胞と<br>100兆個のシナプスから成る</p>
+              </div>
+              <div class="col">
+                <img src="figure/BrainSize.png", alt="Number of neurons and weight of brain of each animal species", width="500">
+                <p style="font-size: 30px; text-align: center;">Herculano-Houzel, 2009</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p>大規模言語モデルは、モデルのパラメータ数に対して性能を向上させる</p>
+        <img src="figure/SimplePowerLaws.png", alt="Scaling law of large language models">
+        <p style="font-size: 30px; text-align: center;">Kaplan et al., 2020</p>
+      </section>
+
+      <section  data-background-image="figure/NeuronForest.png">
+      </section>
+      <section>
+        <div>
+          <h3>神経形態:計算能力を宿す構造</h3>
+        </div>
+        <div class="container">
+          <div class="col">
+          <img src="figure/CA1pyramidal_Transparent.png">
+          </div>
+          <div class="col">
+          <img src="figure/Purkinje_Transparent.png">
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- スライド3 -->
+    <section>
+      <section>
+        <h1 style="text-align: left;">背景</h1>
+      </section>
+      <section>
+        <img src="figure/EchoStateNetwork.png", alt="Echo State Network", width="700">
+        <p style="font-size: 30px; text-align: center;">Jaerger and Haas, 2004, Maass et al., 2002<p>
+            <ul style="font-size: 30px;">
+            <li>リカレントニューラルネットワークモデルとして提案された
+            <li>リザバー層の結合重みを学習する必要がない
+            <li>Echo State Property, 短期記憶,一般化同期
+            </ul>
+      </section>
+      <section>
+         <img src="figure/OctopusArmReservoir.png", alt="OctopusArmReservoir", width="700">
+         <p style="font-size: 30px; text-align: center;">Nakajima et al., 2009<p>
+            <ul style="font-size: 30px;">
+            <li>形態学的コンピューティング 生物の形を活かした計算の枠組み
+            <li>タコ腕を模したソフトロボティクス
+            </ul>
+      </section>
+    </section>
+
+    <!-- スライド4 -->
+    <section>
+      <section data-auto-animate>
+        <h1 style="font-size: 40px;">本プロジェクトのリザバーコンピュータ</h1>
+        <img src="figure/NeuronalReservoir.png", alt="NeuMoResevoir.png", width="700">
+      </section>
+      <section data-auto-animate>
+        <p style="font-size: 40px;">NeuroMorphological Reservoir</p>
+        <p style="
+        <p font-size: 40px;">神経形態学的</p>
+        <p style="font-size: 40px;">NeuMoReservoir</p>
+        <img src="figure/NeuronalReservoir.png", alt="NeuMoResevoir.png", width="700">
+      </section>
+      <section data-auto-animate>
+        <p style="font-size: 40px;">多様な形態を有する神経細胞や<br>遺伝子変異による形態の変化を<br>Echo State Propertyの変化として捉える</p>
+        <img src="figure/NeuronalReservoir.png", alt="NeuMoResevoir.png", width="700">
+      </section>
+    </section>
+
+    <!-- スライド5 -->
+    <section>
+      <section>
+        <p style="font-size:40px;">初期検証</p>
+            <img src="figure/Schematic_NeuronalReservoir.png", alt="Schematic of NeuMoReservoir", width="700px">
+      </section>
+      <section>
+        <p style="font-size:40px;">初期検証-結果-</p>
+        <img src="figure/Result1.png", alt="Result", width="700">
+      </section>
+    </section>
+
+    <!-- スライド6 -->
+    <section>
+      <section>
+        <p style="font-size:40px;">目的</p>
+         <ul style="font-size: 20px;">
+              <li>多様で複雑な神経細胞の形態をリザバーコンピューティングという視点で特徴づけることで<br>神経科学、人工知能に貢献すること
+         </ul>
+        <p style="font-size:40px;">目標</p>
+        <ul style="font-size: 20px;">
+          <li>様々な神経細胞の形態データを用いてリザバーコンピューティングを行うためのシミュレーション環境を整備し、性能評価を行う
+          <li>性能に寄与する特徴を明らかにする
+          <li>作成したソフトウェアをオープンソースとして公開する
+        </ul>
+      </section>
+
+      <section>
+        <p style="font-size:40px;">本プロジェクトの最終成果物</p>
+        <img src="../figure/expected_fruit.png", alt="Expected fruit", width=700>
+      </section>
+    </section>
+
+    <!-- スライド7 -->
+    <section>
+      <section data-auto-animate>
+        <p style="font-size:40px">このシステムについてわかってきたこと</p>
+      </section>
+
+      <section data-auto-animate>
+        <p style="font-size:40px">このシステムについてわかってきたこと</p>
+        <p style="font-size:40px">簡単な空間形状でもリザバーになる</p>
+      </section>
+
+      <section data-auto-animate>
+        <p style="font-size:40px">簡単な空間形状でもリザバーになる</p>
+        <div class="container"> 
+          <div class="col"> 
+            <img src="figure/CSIS1.gif", width="400">
+          </div>
+          <div class="col"> 
+            <img src="figure/CSIS2.gif", width="400">
+          </div>
+        </div>
+      </section>
+
+      <section data-auto-animate>
+        <p style="font-size: 40px">それでもやはり、形態の違いが性能に影響するらしい</p>
+      </section>
+      <section data-auto-animate>
+        <p style="font-size: 40px">それでもやはり、形態の違いが性能に影響するらしい</p>
+        <div class="container">
+          <div class="col">
+            <p>錐体細胞<p>
+            <img src="../figure/CA1pyramidal_balance.png">
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </section>
+      <section data-auto-animate>
+        <p style="font-size: 40px">それでもやはり、形態の違いが性能に影響するらしい</p>
+        <div class="container">
+          <div class="col">
+            <p>錐体細胞<p>
+            <img src="../figure/CA1pyramidal_balance.png">
+          </div>
+          <div class="col">
+            <p>プルキンエ細胞<p>
+            <img src="../figure/Purkinje_balance.png">
+          </div>
+        </div>
+      </section>
+    </section>
+    <section data-background-image="figure/Purkinje.gif">
+      <p style="text-aligin: center; color: white;">9ヶ月間よろしくお願いいたします<p>
+    </section>
+  </div>
+</div>
+
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    width: 960,
+    height: 700,
+    slideNumber: true
+  });
+</script>
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
